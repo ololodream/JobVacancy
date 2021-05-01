@@ -1,0 +1,8 @@
+version: '2.3'
+
+services:
+  mongo_local:
+    image: mongo:3.6.23-xenial
+    ports:
+      - "27017:27017"
+    container_name: mongo_local
