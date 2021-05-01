@@ -1,6 +1,6 @@
 import { HttpService, Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { IUser, User } from '../model/User';
-import { connect, disconnect } from '../db/db.module';
+import { connect, disconnect } from '../db/db';
 import { CreateUserDto, UpdateUserDto } from 'src/controller/Dto/UserDto';
 import { Role } from '../model/enum/enum';
 
