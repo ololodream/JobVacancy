@@ -1,6 +1,6 @@
 import { model, Schema, Model, Document } from 'mongoose';
 import { ICompany, Company } from './Company';
-import { Role } from './enum/enum';
+import { Role } from './enum/role.enum';
 
 export interface IUser extends Document {
     company: string;

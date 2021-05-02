@@ -1,4 +1,4 @@
-import { Role } from '../../model/enum/enum';
+import { Role } from '../../model/enum/role.enum';
 
 export class CreateUserDto {
     company?: string;

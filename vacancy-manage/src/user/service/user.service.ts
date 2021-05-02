@@ -3,7 +3,7 @@ import { IUser, User } from '../model/User';
 import { connect, disconnect } from '../../db/db';
 '../db/db';
 import { CreateUserDto, UpdateUserDto } from 'src/user/controller/Dto/UserDto';
-import { Role } from '../model/enum/enum';
+
 
 @Injectable()
 export class UserService {
