@@ -20,10 +20,6 @@ export class VacancyController {
     @Post()
     @Roles(Role.ADMIN)
     async createVacancy(@Body() createVacancyDto: CreateVacancyDto, @Res() res: Response) {
-        console.log("++++++++++++++++"+createVacancyDto.company)
-        console.log("++++++++++++++++"+createVacancyDto.description);
-        console.log("++++++++++++++++"+createVacancyDto.expireAt);
-        console.log("++++++++++++++++"+createVacancyDto.title);
         await this.vacancyService.addVacancy(createVacancyDto);
         res.status(HttpStatus.CREATED).send();
     }

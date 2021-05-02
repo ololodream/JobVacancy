@@ -1,6 +1,6 @@
 import { model, Schema, Model, Document } from 'mongoose';
-import { IUser, User } from 'src/user/model/User';
-import { ICompany, Company } from 'src/user/model/Company';
+import { IUser, User } from '../../user/model/User';
+import { ICompany, Company } from '../../user/model/Company';
 
 export interface IVacancy extends Document {
     title: string;
