@@ -17,10 +17,10 @@ export class AppController {
     res.status(HttpStatus.OK).send(await this.appService.login(signTokenDto)); 
   }
 
-  // @Post('verify')
-  // verify(@Body() verifyTokenDto: VerifyTokenDto, @Res() res: Response) {
-  //   let decode = this.appService.verify(verifyTokenDto.token);
-  //   res.status(HttpStatus.OK).send(decode); 
-  // } 
+  @Post('verify')
+  verify(@Body() verifyTokenDto: VerifyTokenDto, @Res() res: Response) {
+    let decode = this.appService.verify(verifyTokenDto.token);
+    res.status(HttpStatus.OK).send(decode); 
+  } 
 
 }
