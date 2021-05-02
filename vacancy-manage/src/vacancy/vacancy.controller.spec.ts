@@ -23,7 +23,13 @@ describe('VacancyController', () => {
   describe('listAllVacancy', () => {
     it('should return an array of Vacancies', async () => {
       let result = [];
-      let result_vacancy = {title: "a", description:"a", expireAt: new Date(), publishedBy: "", company: "a"};
+      let result_vacancy = {
+        title: "a", 
+        description:"a", 
+        expireAt: new Date(),
+         publishedBy: "",
+          company: "a"
+        };
       result.push(result_vacancy);    
       jest.spyOn(service, 'getVacancies').mockImplementation(async() => result);
       expect(await controller.listAllVacancy()).toBe(result);
