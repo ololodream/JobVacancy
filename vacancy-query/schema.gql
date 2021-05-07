@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Company {
+  _id: String
+  name: String
+  address: String
+}
+
+type User {
+  _id: String
+  company: Company
+  name: String
+  username: String
+  password: String
+  role: String
+}
+
+type Vacancy {
+  _id: String
+  title: String
+  description: String
+  expireAt: String
+  publishedBy: User
+  company: Company
+}
+
+type Query {
+  vacancies: [Vacancy!]!
+  vacancy(_id: String, title: String, description: String, expireAt: String, publishedBy: UserInput, company: CompanyInput): [Vacancy!]!
+}
+
+input UserInput {
+  _id: String
+  name: String
+  username: String
+  password: String
+  role: String
+}
+
+input CompanyInput {
+  _id: String
+  name: String
+  address: String
+}

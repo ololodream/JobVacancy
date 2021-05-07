@@ -1,9 +1,9 @@
 import { Module,NestModule, MiddlewareConsumer } from '@nestjs/common';
-import { UserService } from './service/user.service';
+import { UserService } from './user.service';
 // import { AuthMiddleware } from '../middleware/auth.middleware';
 
 @Module({
 
-  exports: [UserService]
+  providers: [UserService]
 })
 export class UserModule { }
