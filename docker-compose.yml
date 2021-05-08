@@ -1,8 +1,66 @@
-version: '2.3'
+version: '3'
 
 services:
   mongo_local:
     image: mongo:3.6.23-xenial
     ports:
       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sa
+      - MONGO_INITDB_ROOT_PASSWORD=sa
     container_name: mongo_local
+    networks:  
+      - app-netw or k
+    
+
+  vacancy_auth:
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    image: vacancy_auth_image
+    container_name: vacancy_auth
+    env_file: ./auth/.env
+    environment:
+      DB_HOST: "mongo_local"
+    ports:
+      - "3001:3001"
+    command: npm run start
+    networks:
+      - app-network
+
+  vacancy_manage:
+    build:
+      context: ./vacancy-manage
+      dockerfile: Dockerfile
+    image: vacancy_manage_image
+    container_name: vacancy_manage
+    env_file: ./vacancy-manage/.env
+    environment:
+      DB_HOST: "mongo_local"
+      AUTH_PROVIDER_URL: "http://vacancy_auth:3001/verify"
+    ports:
+      - "3000:3000"
+    command: npm run start
+    networks:
+      - app-network
+
+  vacancy_query:
+    build:
+      context: ./vacancy-query
+      dockerfile: Dockerfile
+    image: vacancy_query_image
+    container_name: vacancy_query
+    env_file: ./vacancy-query/.env
+    environment:
+      DB_HOST: "mongo_local"
+      AUTH_PROVIDER_URL: "http://vacancy_auth:3001/verify"
+    ports:
+      - "3002:3002"
+    command: npm run start
+    networks:
+      - app-network
+  
+
+networks:
+  app-network:
+    driver: bridge
