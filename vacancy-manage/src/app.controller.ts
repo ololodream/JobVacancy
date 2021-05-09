@@ -1,7 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { UserService } from "./user/service/user.service";
-import {IUser} from './user/model/User';
 
 @Controller()
 export class AppController {
