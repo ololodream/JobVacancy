@@ -14,7 +14,22 @@ Job Vacancy management backend project, using Nest framework TypeScript.
 9. A user without an admin role can view job vacancies only
 10. A user has to login first before doing any operation
 
-## 1. Design
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#Description"> Description</a></li>
+    <li><a href="#Design">Design</a></li>
+    <li><a href="#Config">Config</a></li>
+    <li><a href="#Unit-Test">Unit-Test</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#API-usage-and-running-results">API usage and running results</a></li>
+  </ol>
+</details>
+
+
+## Design
 **Technology stack**：Node.js(Nest.js) + typescript + mongodb，REST & GraphQL
 
 **Design**: By analysing the stories, JobVacancy application is decoupled into three micro-services. One for Auth, since Auth are seperated requirements with other business-related features. Also, considering the high volume of query, availability and low latency can be issues. Thus, queries(read DB) activity and management(for create/ delete/edit DB) activities are separated into two services. In total, JobVacancy application has 3 micro-services,
@@ -27,7 +42,7 @@ To satisfy the authorization requirement, SWT token are implemented. Every time 
 
 
 
-## 2. Config
+## Config
 Each service holding a **.env** file like below，edit PORT and TOKEN_EXPIRE on demand. 
 
 ```
@@ -41,21 +56,21 @@ TOKEN_EXPIRE=1h
 TOKEN_SECRET=secrete_blahh
 ```
 
-## 3. Running the app
+## Running the app
 In JobVacancy folder, run below command in CLI
 ```
 ./JobVacancy$ docker-compose up build
 ```
 It will run 4 services(1. mongo_local, 2. vacancy_auth, 3. vacancy_manage, 4. vacancy_query) after images are created.
 
-## 4.Unit Test
+## Unit Test
 $ npm run test
 
 ![image](https://user-images.githubusercontent.com/13676113/117573450-39fc4700-b11b-11eb-86a5-90a9edad3525.png)
 ![image](https://user-images.githubusercontent.com/13676113/117573699-c824fd00-b11c-11eb-9775-60f46346993e.png)
 
 
-## 5. API usage and running results
+## API usage and running results
 
 **5.1 Login**
 
