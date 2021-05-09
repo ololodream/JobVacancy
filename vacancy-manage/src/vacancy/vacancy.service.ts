@@ -1,7 +1,7 @@
 import { Injectable, HttpException, HttpStatus} from '@nestjs/common';
 import { IVacancy, Vacancy } from './model/Vacancy';
 import {connect} from '../db/db'
-import {CreateVacancyDto, UpdateVacancyDto} from './dto/vacancyDto'
+import {CreateVacancyDto, UpdateVacancyDto} from './Dto/VacancyDto'
 
 @Injectable()
 export class VacancyService {

@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
 import { Response } from 'express';
-import { CreateVacancyDto, UpdateVacancyDto } from './dto/VacancyDto';
-import { IVacancy } from './model/Vacancy';
+import { CreateVacancyDto, UpdateVacancyDto } from './Dto/VacancyDto';
+import { IVacancy } from '../vacancy/model/Vacancy';
 import { VacancyService } from './vacancy.service';
 import {Roles} from '../authorization/roles.decorator'
 import {Role} from '../user/model/enum/role.enum'
@@ -13,6 +13,7 @@ export class VacancyController {
     ) {}
 
     @Get()
+    // @Roles(Role.ADMIN)
     listAllVacancy(): Promise<IVacancy[]> {
         return this.vacancyService.getVacancies();
     }

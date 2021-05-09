@@ -10,7 +10,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=sa
     container_name: mongo_local
     networks:  
-      - app-netw or k
+      - app-network
     
 
   vacancy_auth:
