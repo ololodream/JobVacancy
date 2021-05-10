@@ -201,6 +201,9 @@ DELETE http://localhost:3000/vacancy/vacancyID
 Authorization:
 [{"key":"Authorization","value":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjIwMDA3NjQ1LCJleHAiOjE2MjAwMTEyNDV9.A9PzaxoHxAGFIi1DHojKIgPeswxAqNAVC0MoD5yCJ6E"}]
 ```
+
+Screenshot:
+
 ![image](https://user-images.githubusercontent.com/13676113/116836207-fbd9c180-ac08-11eb-9b56-75610ffa4172.png)
 
 
@@ -221,6 +224,9 @@ Authorization:
 
 Key [company] is optional
 ```
+
+Postman & MongoDB Screenshot:
+
 ![image](https://user-images.githubusercontent.com/13676113/116851303-7ddfdf80-ac35-11eb-9897-bec7709e0bd3.png)
 
 
